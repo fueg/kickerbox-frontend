@@ -1,0 +1,18 @@
+@import '../variables/_all';
+
+.text {
+  &--center {
+    text-align: center;
+  }
+}
+
+.spacer {
+  @each $current-size in $size-list {
+    &-#{$current-size}-top {
+      margin-top: map-get($sizes, $current-size);
+    }
+    &-#{$current-size}-bottom {
+      margin-bottom: map-get($sizes, $current-size);
+    }
+  }
+}
