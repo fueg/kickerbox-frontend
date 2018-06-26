@@ -8,11 +8,9 @@ import {delay} from 'rxjs/internal/operators';
 })
 export class ReservationsService {
 
-  delaysMs = 500;
-
   // fake server get
   getReservations(): Observable<Reservation[]> {
-    return of(reservations).pipe(delay(this.delaysMs));
+    return of(reservations);
   }
 
   createReservation(reservation: Reservation): Observable<> {

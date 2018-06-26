@@ -8,10 +8,8 @@ import {delay} from 'rxjs/internal/operators';
 })
 export class ResultsService {
 
-  delaysMs = 500;
-
   // fake server get
   getResults(): Observable<Result[]> {
-    return of(results).pipe(delay(this.delaysMs));
+    return of(results);
   }
 }

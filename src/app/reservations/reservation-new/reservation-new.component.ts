@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ReservationsService} from '../reservations.service';
 import {TeamsService} from '../../teams/teams.service';
-import {Observable, of} from 'rxjs/index';
-import {Reservation, Team, teams} from '../../data-model';
-import {catchError, finalize} from 'rxjs/internal/operators';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Observable} from 'rxjs/index';
+import {Reservation, Team} from '../../data-model';
+import {finalize} from 'rxjs/internal/operators';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-reservation-new',
@@ -58,13 +58,10 @@ export class ReservationNewComponent implements OnInit {
   }
 
   getTeams() {
-    // this.isLoading = true;
-    // this.teams = this.teamsService
-    //   .getTeams()
-    //   .pipe(finalize(() => this.isLoading = false));
-    // TODO: fetch teams from API
     this.isLoading = true;
-    this.teams = of(teams).pipe(finalize(() => this.isLoading = false));
+    this.teams = this.teamsService
+      .getTeams()
+      .pipe(finalize(() => this.isLoading = false));
   }
 
 }
