@@ -1,0 +1,27 @@
+<pre>{{ teams | json }}</pre>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>
+      Date: <input type="date" formControlName="date">
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Home:
+      <select formControlName="homeTeamId">
+        <option *ngFor="let team of teams | async" [value]="team.id">{{team.name}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Visiting:
+      <select formControlName="visitorTeamId">
+        <option *ngFor="let team of teams | async" [value]="team.id">{{team.name}}</option>
+      </select>
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="reservationForm.pristine">Make Reservation</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
+
+<pre>Form value: {{reservationForm.value | json }}</pre>

@@ -11,6 +11,14 @@ export class Reservation {
   homeTeamId: number;
   visitorTeamId: number;
   kickerBoxId: number;
+
+  constructor(dateOfReservation: Date, homeTeamId: number, visitorTeamId: number, kickerBoxId: number) {
+    this.id = getNextId();
+    this.dateOfReservation = dateOfReservation;
+    this.homeTeamId = homeTeamId;
+    this.visitorTeamId = visitorTeamId;
+    this.kickerBoxId = kickerBoxId;
+  }
 }
 
 export class Team {
@@ -26,15 +34,28 @@ export class Kickerbox {
   model: string;
 }
 
+function* nextId() {
+  let index = 1;
+  while (true) {
+    yield index++;
+  }
+}
+
+const gen = nextId();
+
+function getNextId(): number {
+  return Number(gen.next().value);
+}
+
 export const results: Result[] = [
   {
-    id: 1,
+    id: getNextId(),
     homeTeamScore: 7,
     visitorTeamScore: 5,
     reservationId: 1
   },
   {
-    id: 2,
+    id: getNextId(),
     homeTeamScore: 4,
     visitorTeamScore: 1,
     reservationId: 2
@@ -43,19 +64,19 @@ export const results: Result[] = [
 
 export const teams: Team[] = [
   {
-    id: 1,
+    id: getNextId(),
     name: 'Team Leet',
     members: ['Michael', 'Jonas']
   },
   {
-    id: 2,
+    id: getNextId(),
     name: 'Starlord',
     members: ['Johnny', 'Fritz']
   }
 ];
 export const kickerboxes: Kickerbox[] = [
   {
-    id: 1,
+    id: getNextId(),
     name: 'Super Awesome Chaste',
     location: 'Ground Floor',
     model: 'The Machine 5.x'
@@ -63,17 +84,17 @@ export const kickerboxes: Kickerbox[] = [
 ];
 export const reservations: Reservation[] = [
   {
-    id: 1,
-    dateOfReservation: new Date(),
-    homeTeamId: 1,
-    visitorTeamId: 2,
-    kickerBoxId: 1
+    id: getNextId(),
+    dateOfReservation: new Date('2015-03-25T12:00:00Z'),
+    homeTeamId: teams[0].id,
+    visitorTeamId: teams[1].id,
+    kickerBoxId: kickerboxes[0].id
   },
   {
-    id: 1,
-    dateOfReservation: new Date(),
-    homeTeamId: 2,
-    visitorTeamId: 1,
-    kickerBoxId: 1
+    id: getNextId(),
+    dateOfReservation: new Date('2015-03-25T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerBoxId: kickerboxes[0].id
   }
 ];
