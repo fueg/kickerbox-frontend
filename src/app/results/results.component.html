@@ -1,3 +1,10 @@
-<p>
-  results works!
-</p>
+<table>
+  <tr>
+    <th>Home</th>
+    <th>Away</th>
+  </tr>
+  <tr *ngFor="let result of results | async">
+    <td>{{result.homeTeamScore}}</td>
+    <td>{{result.visitorTeamScore}}</td>
+  </tr>
+</table>

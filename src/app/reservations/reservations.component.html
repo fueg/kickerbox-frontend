@@ -1,3 +1,16 @@
-<p>
-  reservations works!
-</p>
+<table>
+  <tr>
+    <th>id</th>
+    <th>date</th>
+    <th>home id</th>
+    <th>visitor id</th>
+    <th>kickerbox id</th>
+  </tr>
+  <tr *ngFor="let reservation of reservations | async">
+    <th>{{reservation.id}}</th>
+    <th>{{reservation.dateOfReservation | date:'medium'}}</th>
+    <th>{{reservation.homeTeamId}}</th>
+    <th>{{reservation.visitorTeamId}}</th>
+    <th>{{reservation.kickerBoxId}}</th>
+  </tr>
+</table>

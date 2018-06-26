@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ResultsService} from './results.service';
+import {Observable} from 'rxjs/index';
+import {Result} from '../data-model';
+import {finalize} from 'rxjs/internal/operators';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  results: Observable<Result[]>;
+  isLoading: false;
 
-  ngOnInit() {
+  constructor(private resultsService: ResultsService) {
   }
 
+  ngOnInit() {
+    this.getResults();
+  }
+
+  getResults() {
+    this.isLoading = true;
+    this.results = this.resultsService
+      .getResults()
+      .pipe(finalize(() => this.isLoading = false));
+  }
 }
