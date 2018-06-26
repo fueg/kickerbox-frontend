@@ -12,7 +12,7 @@ import {finalize} from 'rxjs/internal/operators';
 export class ResultsComponent implements OnInit {
 
   results: Observable<Result[]>;
-  isLoading: false;
+  isLoading = false;
 
   constructor(private resultsService: ResultsService) {
   }

@@ -16,7 +16,7 @@ export class ReservationNewComponent implements OnInit {
 
   reservationForm: FormGroup;
 
-  isLoading: false;
+  isLoading = false;
   teams: Observable<Team[]>;
 
   constructor(private reservationService: ReservationsService,

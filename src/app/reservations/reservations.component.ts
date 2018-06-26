@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs/index";
-import {Reservation} from "../data-model";
-import {ReservationsService} from "./reservations.service";
-import {finalize} from "rxjs/internal/operators";
-import {Router} from "@angular/router";
+import {Observable} from 'rxjs/index';
+import {Reservation} from '../data-model';
+import {ReservationsService} from './reservations.service';
+import {finalize} from 'rxjs/internal/operators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-reservations',
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 export class ReservationsComponent implements OnInit {
 
   reservations: Observable<Reservation[]>;
-  isLoading: false;
+  isLoading = false;
 
   constructor(
     private reservationsService: ReservationsService,

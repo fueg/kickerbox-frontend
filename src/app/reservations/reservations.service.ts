@@ -13,7 +13,7 @@ export class ReservationsService {
     return of(reservations);
   }
 
-  createReservation(reservation: Reservation): Observable<> {
+  createReservation(reservation: Reservation): Observable<null> {
     reservations.push(reservation);
     return of();
   }
