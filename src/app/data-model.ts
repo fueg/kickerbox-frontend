@@ -6,11 +6,20 @@ export class Result {
 }
 
 export class Reservation {
+
+  constructor(dateOfReservation: Date, homeTeamId: number, visitorTeamId: number, kickerboxId: number) {
+    this.id = getNextId();
+    this.dateOfReservation = dateOfReservation;
+    this.homeTeamId = homeTeamId;
+    this.visitorTeamId = visitorTeamId;
+    this.kickerboxId = kickerboxId;
+  }
+
   id: number;
   dateOfReservation: Date;
   homeTeamId: number;
   visitorTeamId: number;
-  kickerBoxId: number;
+  kickerboxId: number;
 }
 
 export class ReservationView extends Reservation {
@@ -87,13 +96,13 @@ export const reservations: Reservation[] = [
     dateOfReservation: new Date('2015-03-25T12:00:00Z'),
     homeTeamId: teams[0].id,
     visitorTeamId: teams[1].id,
-    kickerBoxId: kickerboxes[0].id
+    kickerboxId: kickerboxes[0].id
   },
   {
     id: getNextId(),
     dateOfReservation: new Date('2015-03-25T18:00:00Z'),
     homeTeamId: teams[1].id,
     visitorTeamId: teams[0].id,
-    kickerBoxId: kickerboxes[0].id
+    kickerboxId: kickerboxes[0].id
   }
 ];

@@ -1,4 +1,3 @@
-<pre>{{ teams | json }}</pre>
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label>
@@ -8,14 +7,21 @@
   <div class="form-group">
     <label>Home:
       <select formControlName="homeTeamId">
-        <option *ngFor="let team of teams | async" [value]="team.id">{{team.name}}</option>
+        <option *ngFor="let team of teams" [value]="team.id">{{team.name}}</option>
       </select>
     </label>
   </div>
   <div class="form-group">
     <label>Visiting:
       <select formControlName="visitorTeamId">
-        <option *ngFor="let team of teams | async" [value]="team.id">{{team.name}}</option>
+        <option *ngFor="let team of teams" [value]="team.id">{{team.name}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Kickerbox:
+      <select formControlName="kickerboxId">
+        <option *ngFor="let kickerbox of kickerboxes" [value]="kickerbox.id">{{kickerbox.name}} @ {{kickerbox.location}}</option>
       </select>
     </label>
   </div>
