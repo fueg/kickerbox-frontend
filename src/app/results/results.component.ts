@@ -45,24 +45,12 @@ export class ResultsComponent implements OnInit {
     return results
       .map((result) => {
         const {reservationId} = result;
-        const {homeTeamId, visitorTeamId, kickerboxId} = this.getReservationById(reservations, reservationId);
-        const {name: homeTeamName} = this.getTeamById(teams, homeTeamId);
-        const {name: visitorTeamName} = this.getTeamById(teams, visitorTeamId);
-        const {name: kickerboxName, location: kickerboxLocation} = this.getKickerboxById(kickerboxes, kickerboxId);
+        const {homeTeamId, visitorTeamId, kickerboxId} = this.reservationService.findReservationById(reservations, reservationId);
+        const {name: homeTeamName} = this.teamsService.findTeamById(teams, homeTeamId);
+        const {name: visitorTeamName} = this.teamsService.findTeamById(teams, visitorTeamId);
+        const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerboxes, kickerboxId);
 
         return Object.assign(result, {homeTeamName, visitorTeamName, kickerboxName, kickerboxLocation});
       });
-  }
-
-  private getReservationById(reservations: Reservation[], reservationId: number) {
-    return reservations.find((reservation) => reservation.id === reservationId);
-  }
-
-  private getTeamById(teams: Team[], teamId: number) {
-    return teams.find((team) => team.id === teamId);
-  }
-
-  private getKickerboxById(kickerboxes: Kickerbox[], kickerboxId: number) {
-    return kickerboxes.find((kickerbox) => kickerbox.id === kickerboxId);
   }
 }

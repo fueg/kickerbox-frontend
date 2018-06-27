@@ -10,4 +10,8 @@ export class KickerboxService {
   getKickerboxes(): Observable<Kickerbox[]> {
     return of(kickerboxes);
   }
+
+  findKickerboxById(kickerboxList: Kickerbox[], id: number) {
+    return kickerboxList.find((kickerbox) => kickerbox.id === id);
+  }
 }

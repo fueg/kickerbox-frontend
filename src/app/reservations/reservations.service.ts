@@ -17,4 +17,8 @@ export class ReservationsService {
     reservations.push(reservation);
     return of();
   }
+
+  findReservationById(reservationList: Reservation[], reservationId: number) {
+    return reservationList.find((reservation) => reservation.id === reservationId);
+  }
 }

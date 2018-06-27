@@ -46,25 +46,17 @@ export class ReservationsComponent implements OnInit {
       .map((reservation) => {
 
         const {homeTeamId, visitorTeamId} = reservation;
-        const {name: homeTeamName} = this.getTeamById(teams, homeTeamId);
-        const {name: visitorTeamName} = this.getTeamById(teams, visitorTeamId);
+        const {name: homeTeamName} = this.teamsService.findTeamById(teams, homeTeamId);
+        const {name: visitorTeamName} = this.teamsService.findTeamById(teams, visitorTeamId);
 
         return Object.assign(reservation, {homeTeamName, visitorTeamName});
       })
       .map((reservation) => {
         const {kickerboxId} = reservation;
-        const {name: kickerBoxName, location: kickerBoxLocation} = this.getKickerboxById(kickerBoxes, kickerboxId);
+        const {name: kickerBoxName, location: kickerBoxLocation} = this.kickerboxService.findKickerboxById(kickerBoxes, kickerboxId);
 
         return Object.assign(reservation, {kickerBoxName, kickerBoxLocation});
       });
-  }
-
-  private getTeamById(teams: Team[], teamId: number) {
-    return teams.find((team) => team.id === teamId);
-  }
-
-  private getKickerboxById(kickerboxes: Kickerbox[], kickerboxId: number): Kickerbox {
-    return kickerboxes.find((kickerbox) => kickerbox.id === kickerboxId);
   }
 
   gotoMakeReservation() {
