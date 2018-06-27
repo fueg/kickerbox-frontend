@@ -6,6 +6,7 @@ import {finalize} from 'rxjs/internal/operators';
 import {TeamsService} from '../teams/teams.service';
 import {KickerboxService} from '../kickerboxes/kickerbox.service';
 import {ReservationsService} from '../reservations/reservations.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -20,7 +21,8 @@ export class ResultsComponent implements OnInit {
   constructor(private resultsService: ResultsService,
               private teamsService: TeamsService,
               private kickerboxService: KickerboxService,
-              private reservationService: ReservationsService) {
+              private reservationService: ReservationsService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -52,5 +54,9 @@ export class ResultsComponent implements OnInit {
 
         return Object.assign(result, {homeTeamName, visitorTeamName, kickerboxName, kickerboxLocation});
       });
+  }
+
+  gotoAddResult() {
+    this.router.navigate(['/results/new']);
   }
 }
