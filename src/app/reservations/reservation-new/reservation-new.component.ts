@@ -6,7 +6,7 @@ import {Kickerbox, Reservation, Team} from '../../data-model';
 import {finalize} from 'rxjs/internal/operators';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
-import {KickerboxService} from "../../kickerboxes/kickerbox.service";
+import {KickerboxService} from '../../kickerboxes/kickerbox.service';
 
 @Component({
   selector: 'app-reservation-new',

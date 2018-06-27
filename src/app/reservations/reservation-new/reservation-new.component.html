@@ -1,7 +1,7 @@
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label>
-      Date: <input type="date" formControlName="date">
+      Date: <input type="datetime-local" formControlName="date">
     </label>
   </div>
   <div class="form-group">
