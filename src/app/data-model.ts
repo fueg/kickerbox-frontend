@@ -5,6 +5,13 @@ export class Result {
   reservationId: number;
 }
 
+export class ResultView extends Result {
+  homeTeamName: string;
+  visitorTeamName: string;
+  kickerboxName: string;
+  kickerboxLocation: string;
+}
+
 export class Reservation {
 
   constructor(dateOfReservation: Date, homeTeamId: number, visitorTeamId: number, kickerboxId: number) {
@@ -55,21 +62,6 @@ function getNextId(): number {
   return Number(gen.next().value);
 }
 
-export const results: Result[] = [
-  {
-    id: getNextId(),
-    homeTeamScore: 7,
-    visitorTeamScore: 5,
-    reservationId: 1
-  },
-  {
-    id: getNextId(),
-    homeTeamScore: 4,
-    visitorTeamScore: 1,
-    reservationId: 2
-  },
-];
-
 export const teams: Team[] = [
   {
     id: getNextId(),
@@ -105,4 +97,19 @@ export const reservations: Reservation[] = [
     visitorTeamId: teams[0].id,
     kickerboxId: kickerboxes[0].id
   }
+];
+
+export const results: Result[] = [
+  {
+    id: getNextId(),
+    homeTeamScore: 7,
+    visitorTeamScore: 5,
+    reservationId: reservations[0].id
+  },
+  {
+    id: getNextId(),
+    homeTeamScore: 4,
+    visitorTeamScore: 1,
+    reservationId: reservations[1].id
+  },
 ];

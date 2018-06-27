@@ -1,10 +1,14 @@
 <table>
   <tr>
     <th>Home</th>
+    <th>Score</th>
     <th>Away</th>
+    <th>Venue</th>
   </tr>
-  <tr *ngFor="let result of results | async">
-    <td>{{result.homeTeamScore}}</td>
-    <td>{{result.visitorTeamScore}}</td>
+  <tr *ngFor="let result of results">
+    <td>{{result.homeTeamName}}</td>
+    <td>{{result.homeTeamScore}}:{{result.visitorTeamScore}}</td>
+    <td>{{result.visitorTeamName}}</td>
+    <td>{{result.kickerboxName}} @ {{result.kickerboxLocation}}</td>
   </tr>
 </table>
