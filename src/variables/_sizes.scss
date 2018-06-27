@@ -7,5 +7,5 @@ $size-md: $base-size * 4;
 $size-lg: $base-size * 6;
 $size-xl: $base-size * 8;
 
-$size-list: (xs, sm, md, lg);
+$size-list: (xs, sm, md, lg, xl);
 $sizes: (xs: $size-xs, sm: $size-sm, md: $size-md, lg: $size-lg, xl: $size-xl);

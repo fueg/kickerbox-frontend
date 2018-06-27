@@ -16,4 +16,18 @@ app-root {
   background-color: $z-light-gray;
 }
 
+.header {
+  &__title {
+    font-size: 52px;
+    margin-top: 50px;
+    padding: 20px;
+    font-weight: 600;
+  }
+}
 
+.icon {
+  &--h2 {
+    font-size: 46px;
+    margin: 1px;
+  }
+}
