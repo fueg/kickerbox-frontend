@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'partials/all';
+
+body {
+  background-color: $background-color;
+}
+
+app-root {
+  display: block;
+  width: 800px;
+  margin: 40px auto;
+}
+
+.content {
+  padding: 40px 20px;
+  margin-top: 40px;
+  background-color: $z-light-gray;
+}
+
+

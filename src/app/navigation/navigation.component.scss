@@ -1,0 +1,95 @@
+@import '../../variables/_all';
+
+//Basic styling
+nav {
+  background-color: $background-color;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    color: $z-light-gray;
+    padding: $size-lg;
+    margin-right: $size-sm;
+
+    &:hover {
+      color: $z-orange;
+    }
+
+    &.active {
+      color: $z-dark-gray;
+    }
+
+    i {
+      margin-right: $size-sm;
+    }
+  }
+}
+
+//Styling for the animated button-borders
+.nav {
+  &__button {
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after,
+    span::before,
+    span::after {
+      content: "";
+      position: absolute;
+      transition: all 0.2s linear;
+      background: $z-dark-gray;
+    }
+
+    &::before,
+    &::after {
+      width: 0px;
+      height: 2px;
+      transition-delay: 0.2s;
+    }
+
+    &::before {
+      right: 0;
+      top: 0;
+    }
+
+    &::after {
+      left: 0;
+      bottom: 0;
+    }
+
+    &:hover::before,
+    &:hover::after,
+    &.active::before,
+    &.active::after {
+      width: 100%;
+    }
+
+    &:hover span::before,
+    &:hover span::after,
+    &.active span::before,
+    &.active span::after {
+      height: 100%;
+    }
+
+    span::before,
+    span::after {
+      width: 2px;
+      height: 0px;
+      transition-delay: 0s;
+    }
+
+    span::before {
+      left: 0;
+      top: 0;
+    }
+
+    span::after {
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
