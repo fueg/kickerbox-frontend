@@ -2,15 +2,15 @@
   <tr>
     <th>id</th>
     <th>date</th>
-    <th>home id</th>
-    <th>visitor id</th>
+    <th>home team</th>
+    <th>visitor team</th>
     <th>kickerbox id</th>
   </tr>
-  <tr *ngFor="let reservation of reservations | async">
+  <tr *ngFor="let reservation of reservations">
     <th>{{reservation.id}}</th>
     <th>{{reservation.dateOfReservation | date:'medium'}}</th>
-    <th>{{reservation.homeTeamId}}</th>
-    <th>{{reservation.visitorTeamId}}</th>
+    <th>{{reservation.homeTeamName}}</th>
+    <th>{{reservation.visitorTeamName}}</th>
     <th>{{reservation.kickerBoxId}}</th>
   </tr>
 </table>

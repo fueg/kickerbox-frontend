@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/index';
-import {Reservation} from '../data-model';
+import {forkJoin} from 'rxjs/index';
+import {Reservation, ReservationView, Team} from '../data-model';
 import {ReservationsService} from './reservations.service';
 import {finalize} from 'rxjs/internal/operators';
 import {Router} from '@angular/router';
+import {TeamsService} from '../teams/teams.service';
 
 @Component({
   selector: 'app-reservations',
@@ -12,13 +13,13 @@ import {Router} from '@angular/router';
 })
 export class ReservationsComponent implements OnInit {
 
-  reservations: Observable<Reservation[]>;
+  reservations: ReservationView[];
   isLoading = false;
 
-  constructor(
-    private reservationsService: ReservationsService,
-    private router: Router
-  ) {}
+  constructor(private reservationsService: ReservationsService,
+              private teamsService: TeamsService,
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.getReservations();
@@ -26,9 +27,27 @@ export class ReservationsComponent implements OnInit {
 
   getReservations() {
     this.isLoading = true;
-    this.reservations = this.reservationsService
-      .getReservations()
-      .pipe(finalize( () => this.isLoading = false));
+    forkJoin([this.reservationsService.getReservations(), this.teamsService.getTeams()])
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe((data) => {
+        const [reservations, teams] = data;
+        this.reservations = this.enrichReservations(reservations, teams);
+      });
+  }
+
+  private enrichReservations(reservations: Reservation[], teams: Team[]): ReservationView[] {
+    return reservations.map((reservation) => {
+
+      const {homeTeamId, visitorTeamId} = reservation;
+      const {name: homeTeamName} = this.getTeamById(teams, homeTeamId);
+      const {name: visitorTeamName} = this.getTeamById(teams, visitorTeamId);
+
+      return Object.assign(reservation, {homeTeamName, visitorTeamName});
+    });
+  }
+
+  private getTeamById(teams: Team[], teamId: number) {
+    return teams.find((team) => team.id === teamId);
   }
 
   gotoMakeReservation() {

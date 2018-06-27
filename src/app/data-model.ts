@@ -11,14 +11,11 @@ export class Reservation {
   homeTeamId: number;
   visitorTeamId: number;
   kickerBoxId: number;
+}
 
-  constructor(dateOfReservation: Date, homeTeamId: number, visitorTeamId: number, kickerBoxId: number) {
-    this.id = getNextId();
-    this.dateOfReservation = dateOfReservation;
-    this.homeTeamId = homeTeamId;
-    this.visitorTeamId = visitorTeamId;
-    this.kickerBoxId = kickerBoxId;
-  }
+export class ReservationView extends Reservation {
+  homeTeamName: string;
+  visitorTeamName: string;
 }
 
 export class Team {
