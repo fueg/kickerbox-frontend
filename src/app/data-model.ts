@@ -16,6 +16,8 @@ export class Reservation {
 export class ReservationView extends Reservation {
   homeTeamName: string;
   visitorTeamName: string;
+  kickerBoxName: string;
+  kickerBoxLocation: string;
 }
 
 export class Team {

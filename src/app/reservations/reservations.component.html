@@ -4,14 +4,16 @@
     <th>date</th>
     <th>home team</th>
     <th>visitor team</th>
-    <th>kickerbox id</th>
+    <th>kickerbox</th>
+    <th>location</th>
   </tr>
   <tr *ngFor="let reservation of reservations">
     <th>{{reservation.id}}</th>
     <th>{{reservation.dateOfReservation | date:'medium'}}</th>
     <th>{{reservation.homeTeamName}}</th>
     <th>{{reservation.visitorTeamName}}</th>
-    <th>{{reservation.kickerBoxId}}</th>
+    <th>{{reservation.kickerBoxName}}</th>
+    <th>{{reservation.kickerBoxLocation}}</th>
   </tr>
 </table>
 <button (click)="gotoMakeReservation()">Make New Reservation</button>

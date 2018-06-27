@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {forkJoin} from 'rxjs/index';
-import {Reservation, ReservationView, Team} from '../data-model';
+import {Kickerbox, Reservation, ReservationView, Team} from '../data-model';
 import {ReservationsService} from './reservations.service';
 import {finalize} from 'rxjs/internal/operators';
 import {Router} from '@angular/router';
 import {TeamsService} from '../teams/teams.service';
+import {KickerboxService} from '../kickerboxes/kickerbox.service';
 
 @Component({
   selector: 'app-reservations',
@@ -18,6 +19,7 @@ export class ReservationsComponent implements OnInit {
 
   constructor(private reservationsService: ReservationsService,
               private teamsService: TeamsService,
+              private kickerboxService: KickerboxService,
               private router: Router) {
   }
 
@@ -27,27 +29,42 @@ export class ReservationsComponent implements OnInit {
 
   getReservations() {
     this.isLoading = true;
-    forkJoin([this.reservationsService.getReservations(), this.teamsService.getTeams()])
+    forkJoin([
+      this.reservationsService.getReservations(),
+      this.teamsService.getTeams(),
+      this.kickerboxService.getKickerboxes()
+    ])
       .pipe(finalize(() => this.isLoading = false))
       .subscribe((data) => {
-        const [reservations, teams] = data;
-        this.reservations = this.enrichReservations(reservations, teams);
+        const [reservations, teams, kickerBoxes] = data;
+        this.reservations = this.enrichReservations(reservations, teams, kickerBoxes);
       });
   }
 
-  private enrichReservations(reservations: Reservation[], teams: Team[]): ReservationView[] {
-    return reservations.map((reservation) => {
+  private enrichReservations(reservations: Reservation[], teams: Team[], kickerBoxes: Kickerbox[]): ReservationView[] {
+    return reservations
+      .map((reservation) => {
 
-      const {homeTeamId, visitorTeamId} = reservation;
-      const {name: homeTeamName} = this.getTeamById(teams, homeTeamId);
-      const {name: visitorTeamName} = this.getTeamById(teams, visitorTeamId);
+        const {homeTeamId, visitorTeamId} = reservation;
+        const {name: homeTeamName} = this.getTeamById(teams, homeTeamId);
+        const {name: visitorTeamName} = this.getTeamById(teams, visitorTeamId);
 
-      return Object.assign(reservation, {homeTeamName, visitorTeamName});
-    });
+        return Object.assign(reservation, {homeTeamName, visitorTeamName});
+      })
+      .map((reservation) => {
+        const {kickerBoxId} = reservation;
+        const {name: kickerBoxName, location: kickerBoxLocation} = this.getKickerboxById(kickerBoxes, kickerBoxId);
+
+        return Object.assign(reservation, {kickerBoxName, kickerBoxLocation});
+      });
   }
 
   private getTeamById(teams: Team[], teamId: number) {
     return teams.find((team) => team.id === teamId);
+  }
+
+  private getKickerboxById(kickerboxes: Kickerbox[], kickerboxId: number): Kickerbox {
+    return kickerboxes.find((kickerbox) => kickerbox.id === kickerboxId);
   }
 
   gotoMakeReservation() {
