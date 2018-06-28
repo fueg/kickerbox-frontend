@@ -14,7 +14,7 @@
       display: grid;
       grid-template-columns: 40% auto;
       grid-template-rows: 50% 50%;
-      background-color: $z-light-gray;
+      background-color: white;
       padding: 20px;
       box-sizing: border-box;
       border-left: $size-sm solid transparent;
@@ -29,7 +29,7 @@
         height: 100%;
         position: absolute;
         right: 0;
-        background-color: $z-light-gray;
+        background-color: white;
         transition: all 0.7s;
       }
 
