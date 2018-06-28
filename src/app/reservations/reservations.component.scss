@@ -16,11 +16,10 @@
     display: grid;
     grid-template-columns: 40% auto;
     grid-template-rows: 50% 50%;
-    background-color: $z-light-gray;
+    background-color: white;
     padding: 20px;
     box-sizing: border-box;
     border-left: $size-sm solid transparent;
-    font-family: 'Open Sans', sans-serif;
     margin-bottom: $base-size;
     transition: all 0.7s;
     position: relative;
@@ -31,7 +30,7 @@
       height: 100%;
       position: absolute;
       right: 0;
-      background-color: $z-light-gray;
+      background-color: white;
       transition: all 0.7s;
     }
 
@@ -78,5 +77,49 @@
   &__team {
     font-size: 1.2em;
     font-weight: 700;
+  }
+}
+
+//Basic styling
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-align: center;
+
+    color: $z-dark-gray;
+    padding: $size-lg;
+    transition: background-color 0.4s;
+    transition-delay: 0.4s;
+
+    &:hover {
+      color: $z-orange;
+      background-color: white;
+      transition: background-color 0.1s;
+      transition-delay: 0s;
+    }
+
+    &.active {
+      color: $text-dark;
+      transition-delay: 0s;
+    }
+
+    i {
+      margin-right: $size-sm;
+    }
+}
+
+//Styling for the animated button-borders
+button {
+  margin-top: $size-lg;
+  position: relative;
+  border: none;
+  background: white;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: $base-size solid $z-dark-gray;
   }
 }
