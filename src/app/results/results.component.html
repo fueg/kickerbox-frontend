@@ -1,15 +1,15 @@
-<table>
-  <tr>
-    <th>Home</th>
-    <th>Score</th>
-    <th>Away</th>
-    <th>Venue</th>
-  </tr>
-  <tr *ngFor="let result of results">
-    <td>{{result.homeTeamName}}</td>
-    <td>{{result.homeTeamScore}}:{{result.visitorTeamScore}}</td>
-    <td>{{result.visitorTeamName}}</td>
-    <td>{{result.kickerboxName}} @ {{result.kickerboxLocation}}</td>
-  </tr>
-</table>
+<div class="result-overview">
+  <h3 class="result-overview__title text--center">- Result Overview -</h3>
+  <div class="result__item" *ngFor="let result of results">
+    <div class="result__scores">
+      <span class="result__team">{{result.homeTeamName}}</span>
+      <span class="result__score">{{result.homeTeamScore}}:{{result.visitorTeamScore}}</span>
+      <span class="result__team">{{result.visitorTeamName}}</span>
+    </div>
+    <div class="result__kickerbox-location">
+      <span class="result__kickerbox">{{ result.kickerboxName }} @ {{ result.kickerboxLocation }}</span>
+    </div>
+  </div>
+</div>
+
 <button (click)="gotoAddResult()">Add Result</button>
