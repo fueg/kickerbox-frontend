@@ -1,23 +1,19 @@
-<form [formGroup]="kickerboxForm" (ngSubmit)="onSubmit()">
-
-  <div class="form-group">
-    <label>Name:
-      <input formControlName="kickerboxName">
-    </label>
+<form class="form" [formGroup]="kickerboxForm" (ngSubmit)="onSubmit()">
+  <div class="form-group form__item">
+    <label class="form__label">Name</label>
+    <input class="form__input" formControlName="kickerboxName">
   </div>
-  <div class="form-group">
-    <label>Location:
-      <input formControlName="kickerboxLocation">
-    </label>
+  <div class="form-group form__item">
+    <label class="form__label">Location</label>
+    <input class="form__input" formControlName="kickerboxLocation">
   </div>
-  <div class="form-group">
-    <label>Model
-      <input formControlName="kickerboxModel">
-    </label>
+  <div class="form-group form__item">
+    <label class="form__label">Model</label>
+    <input class="form__input" formControlName="kickerboxModel">
   </div>
-
-  <button type="submit" [disabled]="kickerboxForm.pristine">Add Kickerbox</button>
-  <button type="button" (click)="cancel()">Cancel</button>
 </form>
 
-<pre>Form value: {{kickerboxForm.value | json }}</pre>
+<div>
+  <button class="button button--half" type="button" (click)="cancel()">Cancel</button>
+  <button class="button button--half" type="submit" [disabled]="kickerboxForm.pristine">Add Kickerbox</button>
+</div>
