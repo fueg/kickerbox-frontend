@@ -53,9 +53,9 @@ export class ReservationsComponent implements OnInit {
       })
       .map((reservation) => {
         const {kickerboxId} = reservation;
-        const {name: kickerBoxName, location: kickerBoxLocation} = this.kickerboxService.findKickerboxById(kickerBoxes, kickerboxId);
+        const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerBoxes, kickerboxId);
 
-        return Object.assign(reservation, {kickerBoxName, kickerBoxLocation});
+        return Object.assign(reservation, {kickerboxName, kickerboxLocation});
       });
   }
 
