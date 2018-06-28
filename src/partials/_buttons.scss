@@ -1,0 +1,45 @@
+@import "../variables/_all";
+
+//Basic styling
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: $z-dark-gray;
+  padding: $size-lg;
+  transition: background-color 0.4s;
+  transition-delay: 0.4s;
+
+  &:hover {
+    color: $z-orange;
+    background-color: white;
+    transition: background-color 0.1s;
+    transition-delay: 0s;
+  }
+
+  &.active {
+    color: $text-dark;
+    transition-delay: 0s;
+  }
+
+  i {
+    margin-right: $size-sm;
+  }
+}
+
+//Styling for the animated button-borders
+button {
+  margin-top: $size-lg;
+  position: relative;
+  border: none;
+  background: white;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: $base-size solid $z-dark-gray;
+  }
+}
