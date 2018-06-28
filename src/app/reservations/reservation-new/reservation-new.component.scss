@@ -5,6 +5,17 @@
   width: 100%;
   background-color: white;
   padding: 20px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.button--half {
+  width: calc(50% - 4px);
+
+  &:first-child {
+    width: calc(50% - 8px);
+    margin-right: 8px;
+  }
 }
 
 .form {

@@ -26,6 +26,8 @@
   </div>
 </form>
 
-<button class="button button-half" type="button" (click)="cancel()">Cancel</button>
-<button class="button button-half" type="button" (click)="onSubmit()" [disabled]="reservationForm.pristine">Make Reservation</button>
+<div>
+  <button class="button button--half" type="button" (click)="cancel()">Cancel</button>
+  <button class="button button--half" type="button" (click)="onSubmit()" [disabled]="reservationForm.pristine">Make Reservation</button>
+</div>
 
