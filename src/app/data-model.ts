@@ -1,7 +1,6 @@
 export class Result {
 
   constructor(homeTeamScore: number, visitorTeamScore: number, reservationId: number) {
-    this.id = getNextId();
     this.homeTeamScore = homeTeamScore;
     this.visitorTeamScore = visitorTeamScore;
     this.reservationId = reservationId;
@@ -71,7 +70,7 @@ export class Kickerbox {
 }
 
 function* nextId() {
-  let index = 1;
+  let index = 3;
   while (true) {
     yield index++;
   }
@@ -105,32 +104,74 @@ export const kickerboxes: Kickerbox[] = [
 ];
 export const reservations: Reservation[] = [
   {
-    id: getNextId(),
+    id: 0,
     dateOfReservation: new Date('2015-03-25T12:00:00Z'),
     homeTeamId: teams[0].id,
     visitorTeamId: teams[1].id,
-    kickerboxId: kickerboxes[0].id
+    kickerboxId: 0
   },
   {
-    id: getNextId(),
+    id: 1,
     dateOfReservation: new Date('2015-03-25T18:00:00Z'),
     homeTeamId: teams[1].id,
     visitorTeamId: teams[0].id,
-    kickerboxId: kickerboxes[0].id
+    kickerboxId: 1
   },
   {
-    id: getNextId(),
+    id: 2,
     dateOfReservation: new Date('2015-03-26T12:00:00Z'),
     homeTeamId: teams[0].id,
     visitorTeamId: teams[1].id,
-    kickerboxId: kickerboxes[0].id
+    kickerboxId: 0
   },
   {
-    id: getNextId(),
+    id: 3,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: teams[1].id,
     visitorTeamId: teams[0].id,
-    kickerboxId: kickerboxes[0].id
+    kickerboxId: 2
+  },
+  {
+    id: 4,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 5,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 6,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 7,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 8,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 9,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
   },
 ];
 

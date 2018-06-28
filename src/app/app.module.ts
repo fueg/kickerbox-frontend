@@ -13,6 +13,7 @@ import {TeamsComponent} from './teams/teams.component';
 import {TeamNewComponent} from './teams/team-new/team-new.component';
 import {KickerboxesComponent} from './kickerboxes/kickerboxes.component';
 import {KickerboxNewComponent} from './kickerboxes/kickerbox-new/kickerbox-new.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'reservations', component: ReservationsComponent},
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
       {enableTracing: true} // debugging
     ),
     BrowserModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
