@@ -9,8 +9,10 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {ResultsComponent} from './results/results.component';
 import {ReservationNewComponent} from './reservations/reservation-new/reservation-new.component';
 import {ResultNewComponent} from './results/result-new/result-new.component';
-import { TeamsComponent } from './teams/teams.component';
-import { TeamNewComponent } from './teams/team-new/team-new.component';
+import {TeamsComponent} from './teams/teams.component';
+import {TeamNewComponent} from './teams/team-new/team-new.component';
+import {KickerboxesComponent} from './kickerboxes/kickerboxes.component';
+import {KickerboxNewComponent} from './kickerboxes/kickerbox-new/kickerbox-new.component';
 
 const appRoutes: Routes = [
   {path: 'reservations', component: ReservationsComponent},
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
   {path: 'results/new', component: ResultNewComponent},
   {path: 'teams', component: TeamsComponent},
   {path: 'teams/new', component: TeamNewComponent},
+  {path: 'kickerboxes', component: KickerboxesComponent},
+  {path: 'kickerboxes/new', component: KickerboxNewComponent},
 ];
 
 @NgModule({
@@ -30,7 +34,9 @@ const appRoutes: Routes = [
     ReservationNewComponent,
     ResultNewComponent,
     TeamsComponent,
-    TeamNewComponent
+    TeamNewComponent,
+    KickerboxesComponent,
+    KickerboxNewComponent
   ],
   imports: [
     RouterModule.forRoot(

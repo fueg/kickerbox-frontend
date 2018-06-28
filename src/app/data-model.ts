@@ -57,6 +57,13 @@ export class Team {
 }
 
 export class Kickerbox {
+  constructor(name, location, model) {
+    this.id = getNextId();
+    this.name = name;
+    this.location = location;
+    this.model = model;
+  }
+
   id: number;
   name: string;
   location: string;

@@ -14,4 +14,9 @@ export class KickerboxService {
   findKickerboxById(kickerboxList: Kickerbox[], id: number) {
     return kickerboxList.find((kickerbox) => kickerbox.id === id);
   }
+
+  createKickerbox(kickerbox: Kickerbox): Observable<null> {
+    kickerboxes.push(kickerbox);
+    return of();
+  }
 }
