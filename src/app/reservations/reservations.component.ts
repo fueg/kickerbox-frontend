@@ -10,7 +10,7 @@ import {KickerboxService} from '../kickerboxes/kickerbox.service';
 @Component({
   selector: 'app-reservations',
   templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.css']
+  styleUrls: ['./reservations.component.scss']
 })
 export class ReservationsComponent implements OnInit {
 

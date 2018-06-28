@@ -1,19 +1,17 @@
-<table>
-  <tr>
-    <th>id</th>
-    <th>date</th>
-    <th>home team</th>
-    <th>visitor team</th>
-    <th>kickerbox</th>
-    <th>location</th>
-  </tr>
-  <tr *ngFor="let reservation of reservations">
-    <th>{{reservation.id}}</th>
-    <th>{{reservation.dateOfReservation | date:'medium'}}</th>
-    <th>{{reservation.homeTeamName}}</th>
-    <th>{{reservation.visitorTeamName}}</th>
-    <th>{{reservation.kickerboxName}}</th>
-    <th>{{reservation.kickerboxLocation}}</th>
-  </tr>
-</table>
+<div class="reservation-overview">
+  <h3 class="reservation-overview__title text--center">- Reservation Overview -</h3>
+  <div class="reservation__item" *ngFor="let reservation of reservations">
+    <div class="reservation__datetime-wrapper">
+      <i class="far fa-calendar-alt reservation__icon"></i>
+      <span class="reservation__datetime">{{ reservation.dateOfReservation | date:'d.M.yy, h:mm'}}</span>
+    </div>
+    <div class="reservation__kickerbox-location">
+      <span class="reservation__kickerbox">{{ reservation.kickerBoxName }} @ {{ reservation.kickerBoxLocation }}</span>
+    </div>
+    <div class="reservation__teams">
+      <span class="reservation__team">{{ reservation.homeTeamName }}</span> vs <span class="reservation__team">{{ reservation.visitorTeamName }}</span>
+    </div>
+  </div>
+</div>
+
 <button (click)="gotoMakeReservation()">Make New Reservation</button>
