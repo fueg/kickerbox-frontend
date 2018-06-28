@@ -16,7 +16,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 40% auto;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 100%;
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
@@ -28,7 +28,7 @@
 
     &::after {
       content: "";
-      width: 50%;
+      width: 60%;
       height: 100%;
       position: absolute;
       right: 0;
@@ -46,12 +46,14 @@
     }
   }
 
+  &__name {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+  }
+
   &__members {
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 1;
     grid-column: 2 / span 1;
-    align-self: center;
-    justify-self: center;
-    margin-left: $size-sm;
   }
 
   &__member {

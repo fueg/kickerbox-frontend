@@ -28,7 +28,7 @@
 
     &::after {
       content: "";
-      width: 50%;
+      width: 60%;
       height: 100%;
       position: absolute;
       right: 0;
@@ -53,8 +53,6 @@
     width: 50px;
     font-size: 1.2em;
     font-weight: 700;
-    align-self: center;
-    justify-self: center;
   }
   &__team {
     display: inline-block;

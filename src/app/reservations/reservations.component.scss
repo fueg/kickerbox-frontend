@@ -15,7 +15,7 @@
   &__item {
     width: 100%;
     display: grid;
-    grid-template-columns: 40% auto;
+    grid-template-columns: 50% auto;
     grid-template-rows: 50% 50%;
     background-color: white;
     padding: 20px;
@@ -70,9 +70,8 @@
   &__teams {
     grid-row: 1 / span 2;
     grid-column: 2 / span 1;
-    align-self: center;
-    justify-self: center;
     margin-left: $size-sm;
+    align-self: center;
   }
 
   &__team {

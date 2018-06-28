@@ -16,6 +16,15 @@
   cursor: pointer;
   box-sizing: border-box;
   border-radius: 2px;
+  border-bottom: $base-size solid $z-light-gray;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $z-light-gray;
+    &:hover {
+      color: $z-light-gray;
+    }
+  }
 
   &--full {
     width: 100%;
@@ -31,9 +40,12 @@
 
   &:hover {
     color: $z-orange;
-    background-color: white;
     transition: background-color 0.1s;
     transition-delay: 0s;
-    border-bottom: $base-size solid $z-dark-gray;
+  }
+
+  &:active {
+    border-color: $z-dark-gray;
+    outline: none;
   }
 }
