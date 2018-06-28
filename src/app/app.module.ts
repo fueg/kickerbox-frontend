@@ -9,12 +9,14 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {ResultsComponent} from './results/results.component';
 import {ReservationNewComponent} from './reservations/reservation-new/reservation-new.component';
 import {ResultNewComponent} from './results/result-new/result-new.component';
+import { TeamsComponent } from './teams/teams.component';
 
 const appRoutes: Routes = [
   {path: 'reservations', component: ReservationsComponent},
   {path: 'reservations/new', component: ReservationNewComponent},
   {path: 'results', component: ResultsComponent},
-  {path: 'results/new', component: ResultNewComponent}
+  {path: 'results/new', component: ResultNewComponent},
+  {path: 'teams', component: TeamsComponent},
 ];
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     ReservationsComponent,
     ResultsComponent,
     ReservationNewComponent,
-    ResultNewComponent
+    ResultNewComponent,
+    TeamsComponent
   ],
   imports: [
     RouterModule.forRoot(
