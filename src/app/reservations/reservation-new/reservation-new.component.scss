@@ -1,0 +1,56 @@
+@import '../../../variables/_all';
+@import '../../../partials/_buttons';
+
+.reservation-form {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+}
+
+.form {
+  &__item {
+    width: 100%;
+    margin-bottom: $size-md;
+  }
+
+  &__teams {
+    width: 100%;
+  }
+
+  &__team {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    &:first-child {
+      padding-right: $base-size;
+    }
+    &:last-child {
+      padding-left: $base-size;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    height: $size-xl;
+    border: 1px solid $z-light-gray;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__label {
+    width: 20%;
+    display: block;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: $z-purple;
+    font-weight: 700;
+    margin-bottom: $base-size;
+  }
+
+  &__dateinput {
+
+  }
+}
