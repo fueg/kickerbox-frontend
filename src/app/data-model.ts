@@ -92,6 +92,11 @@ export const teams: Team[] = [
     id: getNextId(),
     name: 'Starlord',
     members: ['Johnny', 'Fritz']
+  },
+  {
+    id: getNextId(),
+    name: 'Starfacy McStarfacy Superfancy Inc.',
+    members: ['Obi Juan Kenobi', 'Luky Boy']
   }
 ];
 export const kickerboxes: Kickerbox[] = [
@@ -170,6 +175,13 @@ export const reservations: Reservation[] = [
     id: 9,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: 2
+  },
+  {
+    id: 9,
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[2].id,
     visitorTeamId: teams[0].id,
     kickerboxId: 2
   },
