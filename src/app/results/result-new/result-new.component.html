@@ -23,6 +23,6 @@
 
 </form>
 <div>
-  <button class="button button--half" type="button" (click)="cancel()">Cancel</button>
-  <button class="button button--half" type="submit" (click)="onSubmit()" [disabled]="resultForm.pristine">Add Result</button>
+  <button class="button button--half button--cancel" type="button" (click)="cancel()">Cancel</button>
+  <button class="button button--half button--primary" type="submit" (click)="onSubmit()" [disabled]="resultForm.pristine">Add Result</button>
 </div>

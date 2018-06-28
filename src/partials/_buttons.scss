@@ -12,17 +12,39 @@
   padding: $size-lg;
   position: relative;
   border: none;
-  background: white;
   cursor: pointer;
   box-sizing: border-box;
   border-radius: 2px;
-  border-bottom: $base-size solid $z-light-gray;
+  border-bottom: $base-size solid $z-blue;
+  background: white;
 
-  &:disabled {
-    cursor: not-allowed;
-    color: $z-light-gray;
+  &--primary {
+    background-color: $z-bright-blue;
     &:hover {
+      color: $text-light;
+    }
+    &:disabled {
+      cursor: not-allowed;
       color: $z-light-gray;
+      &:hover {
+        color: $z-light-gray;
+      }
+    }
+    &:active {
+      border-color: $z-dark-gray;
+      outline: none;
+    }
+  }
+
+  &--cancel {
+    background-color: $z-light-gray;
+    border-color: $z-dark-gray;
+    &:hover {
+      color: $text-light;
+    }
+    &:active {
+      border-color: black;
+      outline: none;
     }
   }
 
@@ -36,16 +58,5 @@
 
   &--fourth {
     width: 25%;
-  }
-
-  &:hover {
-    color: $z-orange;
-    transition: background-color 0.1s;
-    transition-delay: 0s;
-  }
-
-  &:active {
-    border-color: $z-dark-gray;
-    outline: none;
   }
 }
