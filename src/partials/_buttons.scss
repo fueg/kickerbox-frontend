@@ -20,8 +20,9 @@
 
   &--primary {
     background-color: $z-bright-blue;
+    color: $text-light;
     &:hover {
-      color: $text-light;
+      color: $z-dark-gray;
     }
     &:disabled {
       cursor: not-allowed;

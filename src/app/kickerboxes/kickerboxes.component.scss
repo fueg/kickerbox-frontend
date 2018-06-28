@@ -16,7 +16,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 45% auto;
-    background-color: white;
+    background-color: $item-background;
     padding: 20px;
     box-sizing: border-box;
     border-left: $size-sm solid transparent;
@@ -31,13 +31,13 @@
       height: 100%;
       position: absolute;
       right: 0;
-      background-color: white;
+      background-color: $item-background;
       transition: all 0.7s;
     }
 
     &:hover {
       border-left: $size-sm solid $z-orange;
-      background-color: white;
+      background-color: $item-background;
 
       &::after {
         right: -500px;

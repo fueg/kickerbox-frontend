@@ -1,8 +1,8 @@
 @import 'partials/all';
+@import 'variables/_all';
 
 html {
-  background-color: $background-color;
-  background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 59%,#398235 100%);
+  background: $main-background;
   background-attachment: fixed;
 }
 
