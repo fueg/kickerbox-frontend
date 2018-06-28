@@ -45,6 +45,12 @@ export class ReservationView extends Reservation {
 }
 
 export class Team {
+  constructor(name: string, ...members: string[]) {
+    this.id = getNextId();
+    this.name = name;
+    this.members = members;
+  }
+
   id: number;
   name: string;
   members: string[];

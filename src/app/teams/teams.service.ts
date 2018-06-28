@@ -14,4 +14,9 @@ export class TeamsService {
   findTeamById(teamList: Team[], id: number) {
     return teamList.find((team) => team.id === id);
   }
+
+  createTeam(team: Team): Observable<null> {
+    teams.push(team);
+    return of();
+  }
 }
