@@ -1,4 +1,12 @@
 export class Result {
+
+  constructor(homeTeamScore: number, visitorTeamScore: number, reservationId: number) {
+    this.id = getNextId();
+    this.homeTeamScore = homeTeamScore;
+    this.visitorTeamScore = visitorTeamScore;
+    this.reservationId = reservationId;
+  }
+
   id: number;
   homeTeamScore: number;
   visitorTeamScore: number;
@@ -32,11 +40,17 @@ export class Reservation {
 export class ReservationView extends Reservation {
   homeTeamName: string;
   visitorTeamName: string;
-  kickerBoxName: string;
-  kickerBoxLocation: string;
+  kickerboxName: string;
+  kickerboxLocation: string;
 }
 
 export class Team {
+  constructor(name: string, ...members: string[]) {
+    this.id = getNextId();
+    this.name = name;
+    this.members = members;
+  }
+
   id: number;
   name: string;
   members: string[];
@@ -96,7 +110,21 @@ export const reservations: Reservation[] = [
     homeTeamId: teams[1].id,
     visitorTeamId: teams[0].id,
     kickerboxId: kickerboxes[0].id
-  }
+  },
+  {
+    id: getNextId(),
+    dateOfReservation: new Date('2015-03-26T12:00:00Z'),
+    homeTeamId: teams[0].id,
+    visitorTeamId: teams[1].id,
+    kickerboxId: kickerboxes[0].id
+  },
+  {
+    id: getNextId(),
+    dateOfReservation: new Date('2015-03-26T18:00:00Z'),
+    homeTeamId: teams[1].id,
+    visitorTeamId: teams[0].id,
+    kickerboxId: kickerboxes[0].id
+  },
 ];
 
 export const results: Result[] = [

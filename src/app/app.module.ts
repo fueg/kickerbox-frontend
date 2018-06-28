@@ -8,11 +8,17 @@ import {NavigationComponent} from './navigation/navigation.component';
 import {ReservationsComponent} from './reservations/reservations.component';
 import {ResultsComponent} from './results/results.component';
 import {ReservationNewComponent} from './reservations/reservation-new/reservation-new.component';
+import {ResultNewComponent} from './results/result-new/result-new.component';
+import { TeamsComponent } from './teams/teams.component';
+import { TeamNewComponent } from './teams/team-new/team-new.component';
 
 const appRoutes: Routes = [
   {path: 'reservations', component: ReservationsComponent},
   {path: 'reservations/new', component: ReservationNewComponent},
   {path: 'results', component: ResultsComponent},
+  {path: 'results/new', component: ResultNewComponent},
+  {path: 'teams', component: TeamsComponent},
+  {path: 'teams/new', component: TeamNewComponent},
 ];
 
 @NgModule({
@@ -21,7 +27,10 @@ const appRoutes: Routes = [
     NavigationComponent,
     ReservationsComponent,
     ResultsComponent,
-    ReservationNewComponent
+    ReservationNewComponent,
+    ResultNewComponent,
+    TeamsComponent,
+    TeamNewComponent
   ],
   imports: [
     RouterModule.forRoot(

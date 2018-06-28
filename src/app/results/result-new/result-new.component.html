@@ -1,0 +1,31 @@
+<h2 *ngIf="unscoredReservations?.length === 0">No outstanding results</h2>
+<form *ngIf="unscoredReservations?.length > 0" [formGroup]="resultForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Reservation:
+      <select formControlName="reservationId">
+        <option *ngFor="let reservation of unscoredReservations" [value]="reservation.id">
+          {{reservation.dateOfReservation | date:'medium'}} {{reservation.homeTeamName}} vs
+          {{reservation.visitorTeamName}} @ {{reservation.kickerboxLocation}}
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Home Score:
+      <input type="number" formControlName="homeTeamScore">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Home Score:
+      <input type="number" formControlName="visitorTeamScore">
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="resultForm.pristine">Add Result</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
+
+<pre>Form value: {{resultForm.value | json }}</pre>
