@@ -1,11 +1,13 @@
-<table>
-  <tr>
-    <th>name</th>
-    <th>members</th>
-  </tr>
-  <tr *ngFor="let team of teams | async">
-    <td>{{team.name}}</td>
-    <td>{{team.members[0]}}, {{team.members[1]}}</td>
-  </tr>
-</table>
+<div class="team-overview">
+  <h3 class="team-overview__title text--center">- Team Overview -</h3>
+  <div class="team__item" *ngFor="let team of teams | async">
+    <div class="team-location">
+      <span class="team">{{ team.name }}</span>
+    </div>
+    <div class="team__members">
+      <span class="team__member">({{ team.members[0] }}</span> & <span class="team__member">{{team.members[1]}})</span>
+    </div>
+  </div>
+</div>
+
 <button (click)="gotoAddTeam()">Add New Team</button>
