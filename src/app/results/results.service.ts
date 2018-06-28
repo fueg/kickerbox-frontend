@@ -24,10 +24,7 @@ export class ResultsService {
   createResult(result: Result): Observable<Result> {
 
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
-      })
+      headers: new HttpHeaders()
     };
 
     return this.http
