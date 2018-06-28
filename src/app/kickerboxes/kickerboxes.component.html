@@ -1,11 +1,10 @@
-<table>
-  <tr>
-    <th>name</th>
-    <th>location</th>
-  </tr>
-  <tr *ngFor="let kickerbox of kickerboxes | async">
-    <td>{{kickerbox.name}}</td>
-    <td>{{kickerbox.location}}</td>
-  </tr>
-</table>
+<div class="kickerbox-overview">
+  <h3 class="kickerbox-overview__title text--center">- Kickerbox Overview -</h3>
+  <div class="kickerbox__item" *ngFor="let kickerbox of kickerboxes | async">
+    <div class="kickerbox-location">
+      <span class="kickerbox">{{ kickerbox.name }} @ {{ kickerbox.location }}</span>
+    </div>
+  </div>
+</div>
+
 <button (click)="gotoAddKickerbox()">Add New Kickerbox</button>

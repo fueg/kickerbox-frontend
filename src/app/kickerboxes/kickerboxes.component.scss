@@ -1,0 +1,46 @@
+@import '../../variables/_all';
+
+.kickerbox-overview {
+  width: 100%;
+  overflow: hidden;
+
+  &__title {
+    font-weight: 400;
+    margin: $size-lg 0;
+  }
+  .kickerbox   {
+    &__item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 40% auto;
+      grid-template-rows: 50% 50%;
+      background-color: $z-light-gray;
+      padding: 20px;
+      box-sizing: border-box;
+      border-left: $size-sm solid transparent;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: $base-size;
+      transition: all 0.7s;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        background-color: $z-light-gray;
+        transition: all 0.7s;
+      }
+
+      &:hover {
+        border-left: $size-sm solid $z-orange;
+        background-color: white;
+
+        &::after {
+          right: -500px;
+        }
+      }
+    }
+  }
+}
