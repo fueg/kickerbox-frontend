@@ -1,17 +1,18 @@
+<h3 class="reservation-overview__title text--center">- Reservation Overview -</h3>
 <div class="reservation-overview">
-  <h3 class="reservation-overview__title text--center">- Reservation Overview -</h3>
   <div class="reservation__item" *ngFor="let reservation of reservations">
-    <div class="reservation__datetime-wrapper">
-      <i class="far fa-calendar-alt reservation__icon"></i>
-      <span class="reservation__datetime">{{ reservation.dateOfReservation | date:'d.M.yy, h:mm'}}</span>
-    </div>
-    <div class="reservation__kickerbox-location">
-      <span class="reservation__kickerbox">{{ reservation.kickerboxName }} @ {{ reservation.kickerboxLocation }}</span>
-    </div>
-    <div class="reservation__teams">
-      <span class="reservation__team">{{ reservation.homeTeamName }}</span> vs <span class="reservation__team">{{ reservation.visitorTeamName }}</span>
+    <div class="wrapper">
+      <div class="reservation__datetime-wrapper">
+        <i class="far fa-calendar-alt reservation__icon"></i>
+        <div class="reservation__datetime">{{ reservation.dateOfReservation | date:'d.M.yy, h:mm'}}</div>
+        <div class="reservation__kickerbox">{{ reservation.kickerboxName }}<br />@{{ reservation.kickerboxLocation }}</div>
+      </div>
+      <div class="reservation__teams">
+        <span class="reservation__team">{{ reservation.homeTeamName }}</span><br />vs<br/><span class="reservation__team">{{ reservation.visitorTeamName }}</span>
+      </div>
     </div>
   </div>
 </div>
 
-<button class="button button--full button--primary" (click)="gotoMakeReservation()"><span>Make New Reservation</span></button>
+<button class="button button--full button--primary" (click)="gotoMakeReservation()"><span>Make New Reservation</span>
+</button>
