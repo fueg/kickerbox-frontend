@@ -1,5 +1,6 @@
 @import 'partials/all';
 @import 'variables/_all';
+@import 'partials/_breakpoints';
 
 html {
   background: $main-background;
@@ -14,6 +15,11 @@ app-root {
   display: block;
   width: 800px;
   margin: 40px auto;
+
+  @include tablet {
+    width: 100%;
+    padding: 0 $size-md;
+  }
 }
 
 .content {
@@ -26,6 +32,10 @@ app-root {
     margin-top: 50px;
     padding: 20px;
     font-weight: 600;
+
+    @include tablet {
+      font-size: 2em;
+    }
   }
 }
 
@@ -33,5 +43,9 @@ app-root {
   &--h2 {
     font-size: 46px;
     margin: 1px;
+
+    @include tablet {
+      font-size: 32px;
+    }
   }
 }
