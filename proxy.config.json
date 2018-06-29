@@ -1,6 +1,18 @@
 {
-  "/api/*": {
+  "/api/result*": {
     "target": "https://europe-west1-jso-camp.cloudfunctions.net",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/kickerbox*": {
+    "target": "https://europe-west1-jso-camp.cloudfunctions.net",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/v1/*": {
+    "target": "https://kickerbox-teams-dot-jso-camp.appspot.com",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

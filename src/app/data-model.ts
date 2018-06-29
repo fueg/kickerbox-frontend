@@ -111,78 +111,78 @@ export const reservations: Reservation[] = [
   {
     id: 0,
     dateOfReservation: new Date('2015-03-25T12:00:00Z'),
-    homeTeamId: teams[0].id,
-    visitorTeamId: teams[1].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 0
   },
   {
     id: 1,
     dateOfReservation: new Date('2015-03-25T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 1
   },
   {
     id: 2,
     dateOfReservation: new Date('2015-03-26T12:00:00Z'),
-    homeTeamId: teams[0].id,
-    visitorTeamId: teams[1].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 0
   },
   {
     id: 3,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 4,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 5,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 6,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 7,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 8,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 9,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[1].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
   {
     id: 9,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
-    homeTeamId: teams[2].id,
-    visitorTeamId: teams[0].id,
+    homeTeamId: 1,
+    visitorTeamId: 1,
     kickerboxId: 2
   },
 ];
