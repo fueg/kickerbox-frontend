@@ -43,8 +43,8 @@ export class ReservationNewComponent implements OnInit {
   }
 
   onSubmit() {
-    const {date, homeTeamId, visitorTeamId, kickerboxId} = this.reservationForm.value;
-    const savable = new Reservation(new Date(date), Number(homeTeamId), Number(visitorTeamId), Number(kickerboxId));
+    const {date, homeTeamId, visitorTeamId, kickerBoxId} = this.reservationForm.value;
+    const savable = new Reservation(new Date(date), Number(homeTeamId), Number(visitorTeamId), Number(kickerBoxId));
 
     console.log(savable);
     this.reservationService

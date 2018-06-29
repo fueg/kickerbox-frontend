@@ -87,10 +87,10 @@ export class ResultNewComponent implements OnInit {
   private enrichReservations(reservations: Reservation[], teams: Team[], kickerboxes: Kickerbox[]): ReservationView[] {
     return reservations.map((reservation) => {
       const {id: reservationId} = reservation;
-      const {homeTeamId, visitorTeamId, kickerboxId} = this.reservationService.findReservationById(reservations, reservationId);
+      const {homeTeamId, visitorTeamId, kickerBoxId} = this.reservationService.findReservationById(reservations, reservationId);
       const {name: homeTeamName} = this.teamsService.findTeamById(teams, homeTeamId);
       const {name: visitorTeamName} = this.teamsService.findTeamById(teams, visitorTeamId);
-      const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerboxes, kickerboxId);
+      const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerboxes, kickerBoxId);
 
       return Object.assign(reservation, {homeTeamName, visitorTeamName, kickerboxName, kickerboxLocation});
     });
