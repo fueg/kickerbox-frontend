@@ -11,8 +11,14 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
-  "/api/v1/*": {
+  "/api/v1/team*": {
     "target": "https://kickerbox-teams-dot-jso-camp.appspot.com",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/v1/reservation*": {
+    "target": "https://kickerbox-reservations-dot-jso-camp.appspot.com",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

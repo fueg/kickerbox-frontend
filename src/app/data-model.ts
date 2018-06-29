@@ -22,18 +22,17 @@ export class ResultView extends Result {
 export class Reservation {
 
   constructor(dateOfReservation: Date, homeTeamId: number, visitorTeamId: number, kickerboxId: number) {
-    this.id = getNextId();
     this.dateOfReservation = dateOfReservation;
     this.homeTeamId = homeTeamId;
     this.visitorTeamId = visitorTeamId;
-    this.kickerboxId = kickerboxId;
+    this.kickerBoxId = kickerboxId;
   }
 
   id: number;
   dateOfReservation: Date;
   homeTeamId: number;
   visitorTeamId: number;
-  kickerboxId: number;
+  kickerBoxId: number;
 }
 
 export class ReservationView extends Reservation {
@@ -113,77 +112,77 @@ export const reservations: Reservation[] = [
     dateOfReservation: new Date('2015-03-25T12:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 0
+    kickerBoxId: 0
   },
   {
     id: 1,
     dateOfReservation: new Date('2015-03-25T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 1
+    kickerBoxId: 1
   },
   {
     id: 2,
     dateOfReservation: new Date('2015-03-26T12:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 0
+    kickerBoxId: 0
   },
   {
     id: 3,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 4,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 5,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 6,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 7,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 8,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 9,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
   {
     id: 9,
     dateOfReservation: new Date('2015-03-26T18:00:00Z'),
     homeTeamId: 1,
     visitorTeamId: 1,
-    kickerboxId: 2
+    kickerBoxId: 2
   },
 ];
 

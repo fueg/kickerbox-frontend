@@ -47,10 +47,10 @@ export class ResultsComponent implements OnInit {
     return results
       .map((result) => {
         const {reservationId} = result;
-        const {homeTeamId, visitorTeamId, kickerboxId} = this.reservationService.findReservationById(reservations, reservationId);
+        const {homeTeamId, visitorTeamId, kickerBoxId} = this.reservationService.findReservationById(reservations, reservationId);
         const {name: homeTeamName} = this.teamsService.findTeamById(teams, homeTeamId);
         const {name: visitorTeamName} = this.teamsService.findTeamById(teams, visitorTeamId);
-        const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerboxes, kickerboxId);
+        const {name: kickerboxName, location: kickerboxLocation} = this.kickerboxService.findKickerboxById(kickerboxes, kickerBoxId);
 
         return Object.assign(result, {homeTeamName, visitorTeamName, kickerboxName, kickerboxLocation});
       });
