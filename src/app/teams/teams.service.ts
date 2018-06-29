@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Team, teams} from '../data-model';
-import {Observable, of, throwError} from 'rxjs/index';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Team} from '../data-model';
+import {Observable, throwError} from 'rxjs/index';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/internal/operators';
 
 @Injectable({
@@ -24,9 +24,16 @@ export class TeamsService {
     return teamList.find((team) => team.id === id);
   }
 
-  createTeam(team: Team): Observable<null> {
-    teams.push(team);
-    return of();
+  createTeam(team: Team): Observable<Team> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    return this.http
+      .post<Team>(this.url, team, httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
