@@ -4,7 +4,6 @@
 
 .reservation-overview {
   width: 100%;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: $size-sm;
@@ -39,6 +38,11 @@
     padding: 20px;
 
     &:hover {
+      box-shadow: 0 0 20px $z-dark-gray;
+      transform: scale(1.03, 1.03);
+      border-radius: $base-size;
+      transition: all 0.2s;
+
       & .reservation {
         &__teams {
           position: absolute;
