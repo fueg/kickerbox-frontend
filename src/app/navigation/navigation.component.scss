@@ -1,4 +1,5 @@
 @import '../../variables/_all';
+@import '../../partials/_breakpoints';
 
 //Basic styling
 nav {
@@ -15,6 +16,13 @@ nav {
     margin-right: $size-sm;
     transition: background-color 0.2s;
     transition-delay: 0.1s;
+
+    @include tablet {
+      box-sizing: border-box;
+      padding: $size-sm;
+      width: 100%;
+      margin: 0;
+    }
 
     &:hover {
       color: $z-purple;
@@ -47,6 +55,10 @@ nav {
       position: absolute;
       transition: all 0.2s linear;
       background: $z-dark-gray;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &::before,

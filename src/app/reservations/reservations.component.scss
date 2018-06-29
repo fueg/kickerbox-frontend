@@ -1,17 +1,26 @@
 @import '../../variables/_all';
 @import '../../partials/_buttons.scss';
+@import '../../partials/_breakpoints';
 
 .reservation-overview {
   width: 100%;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: $size-sm;
   grid-row-gap: $size-sm;
 
   &__title {
-    font-weight: 400;
     margin: $size-lg 0;
+    color: $z-blue;
+
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include phone {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -30,6 +39,11 @@
     padding: 20px;
 
     &:hover {
+      box-shadow: 0 0 20px $z-dark-gray;
+      transform: scale(1.03, 1.03);
+      border-radius: $base-size;
+      transition: all 0.2s;
+
       & .reservation {
         &__teams {
           position: absolute;
@@ -84,7 +98,8 @@
   }
 
   &__team {
-    font-size: 1.2em;
+    height: 1.2em;
+    font-size: 1em;
     font-weight: 700;
     width: 100%;
     display: inline-block;
