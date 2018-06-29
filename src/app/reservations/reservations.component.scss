@@ -1,5 +1,6 @@
 @import '../../variables/_all';
 @import '../../partials/_buttons.scss';
+@import '../../partials/_breakpoints';
 
 .reservation-overview {
   width: 100%;
@@ -12,6 +13,14 @@
   &__title {
     font-weight: 400;
     margin: $size-lg 0;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include phone {
+    grid-template-columns: 1fr;
   }
 }
 
